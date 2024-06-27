@@ -60,8 +60,6 @@ def quantile(u,X,tol=1e-5,most=30): # Newton's method
             Phi=np.expand_dims(np.sum(norminv,axis=1),(1,2))*np.expand_dims(np.identity(n),0)-(diff*np.expand_dims(norminv**3,1))@np.transpose(diff,(0,2,1))
             step=np.linalg.inv(Phi)@np.expand_dims(Delta,2)
             step=np.squeeze(step)
-        #if count!=most:
-        #    print(count)
     if np.any(deg):
         index=np.where(1-deg)[0]
         out[index,:]=current_q
