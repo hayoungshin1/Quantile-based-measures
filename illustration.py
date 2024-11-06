@@ -111,7 +111,6 @@ for moment in ['dispersion', 'skewness', 'kurtosis', 'sasymmetry']:
                 avedispersion.append(aveinterrange)
             elif moment=='skewness':
                 supskewness.append(np.max(np.sqrt(np.sum(pluslogs**2,1)))/supinterrange)
-                #aveskewness.append(np.mean(pluslogs,0)/aveinterrange)
                 vector=np.mean(pluslogs,0)/aveinterrange
                 aveskewness.append(np.sum(vector**2))
             elif moment=='kurtosis':
