@@ -3,11 +3,11 @@ import math
 import stat
 import time
 import matplotlib.pyplot as plt
-
-n=2
-N=300
+from scipy.stats import skewnorm, t
 
 def check(u,X):
+    n=X.shape[0]
+    N=X.shape[1]
     M=u.shape[0]
     degenerates=-np.ones(M)
     for i in range(N):
@@ -29,6 +29,8 @@ def loss(uprime,Xprime,q):
     return np.sum(norm,axis=1)+np.sum(inner,axis=1) # shape is (M,)
 
 def quantile(u,X,tol=1e-5,most=30): # Newton's method
+    n=X.shape[0]
+    N=X.shape[1]
     M=u.shape[0]
     out=np.zeros((M,n))
     checkers=check(u,X)
