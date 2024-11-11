@@ -5,6 +5,7 @@ import time
 import matplotlib.pyplot as plt
 from scipy.stats import skewnorm, t
 
+
 def check(u,X):
     n=X.shape[0]
     N=X.shape[1]
